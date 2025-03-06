@@ -135,7 +135,7 @@
                                 </ul>
                             </li> -->
                             <li><a href="#">Blog</a></li>
-                            <li><a href="#">Contact Us</a></li>
+                            <li><a href="./contact.html">Contact Us</a></li>
                             <!-- <a href="#" class="search-switch"><img src="img/icon/search.png" alt=""></a>
                             <a href="#"><img src="img/icon/heart.png" alt=""></a>
                             <a href="#"><img src="img/icon/cart.png" alt=""> <span>Cart: $0.00</span></a> -->
@@ -460,46 +460,52 @@
 
 
 
-    <!-- Categories Section Begin -->
+   <!-- Categories Section Begin -->
 <section class="categories">
     <div class="container">
+        <!-- Section Title -->
+        <div class="section-title text-center">
+            <span>What We Offer</span>
+            <h2>Delicious Treats for Every Occasion</h2>
+        </div>
+
         <div class="row">
             <div class="categories__slider owl-carousel">
                 <div class="categories__item">
                     <div class="categories__item__icon">
                         <span class="flaticon-029-cupcake-3"></span>
-                        <h5>Delightful Cupcakes</h5>
                     </div>
+                    <h5>Delightful Cupcakes</h5>
                 </div>
                 <div class="categories__item">
                     <div class="categories__item__icon">
                         <span class="flaticon-034-chocolate-roll"></span>
-                        <h5>Rich Butter Cakes</h5>
                     </div>
+                    <h5>Rich Butter Cakes</h5>
                 </div>
                 <div class="categories__item">
                     <div class="categories__item__icon">
                         <span class="flaticon-005-pancake"></span>
-                        <h5>Velvety Red Velvet</h5>
                     </div>
+                    <h5>Velvety Red Velvet</h5>
                 </div>
                 <div class="categories__item">
                     <div class="categories__item__icon">
                         <span class="flaticon-030-cupcake-2"></span>
-                        <h5>Crunchy Biscuits</h5>
                     </div>
+                    <h5>Crunchy Biscuits</h5>
                 </div>
                 <div class="categories__item">
                     <div class="categories__item__icon">
                         <span class="flaticon-006-macarons"></span>
-                        <h5>Glazed Donuts</h5>
                     </div>
+                    <h5>Glazed Donuts</h5>
                 </div>
                 <div class="categories__item">
                     <div class="categories__item__icon">
                         <span class="flaticon-006-macarons"></span>
-                        <h5>Signature Cupcakes</h5>
                     </div>
+                    <h5>Signature Cupcakes</h5>
                 </div>
             </div>
         </div>
@@ -511,50 +517,96 @@
 /* Modern Styling with Animations */
 .categories {
     background: #fffaf3;
-    padding: 50px 0;
+    padding: 70px 0;
 }
 
+/* Section Title Styling */
+.section-title {
+    margin-bottom: 30px;
+}
+
+.section-title span {
+    font-size: 16px;
+    font-weight: 600;
+    color: #ff5722;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.section-title h2 {
+    font-size: 28px;
+    font-weight: bold;
+    color: #333;
+}
+
+/* Categories Slider */
 .categories__slider {
     display: flex;
     justify-content: center;
-    gap: 20px;
+    gap: 15px;
 }
 
+/* Category Item */
 .categories__item {
     background: linear-gradient(145deg, #ffcc80, #ffb74d);
-    border-radius: 15px;
+    border-radius: 12px;
     text-align: center;
-    padding: 30px;
-    width: 180px;
-    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.1);
+    padding: 25px;
+    width: 160px;
+    height: 160px;
+    box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
+/* Hover Effect */
 .categories__item:hover {
-    transform: scale(1.1);
-    box-shadow: 8px 8px 20px rgba(0, 0, 0, 0.2);
+    transform: scale(1.08);
+    box-shadow: 6px 6px 18px rgba(0, 0, 0, 0.2);
 }
 
+/* Category Icons */
 .categories__item__icon span {
-    font-size: 40px;
-    color: #ff5722;
+    font-size: 36px;
+    color: rgb(252, 105, 0);
     display: block;
     margin-bottom: 10px;
-    animation: bounce 1.5s infinite;
+    animation: bounce 2s infinite;
 }
 
+/* Category Title */
 .categories__item h5 {
-    font-size: 18px;
-    font-weight: bold;
-    color: #fff;
+    font-size: 14px;
+    font-weight: bolder;
+    color: white;
     text-transform: uppercase;
 }
 
-/* Animation */
+/* Icon Animation */
 @keyframes bounce {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-5px); }
+    0%, 100% { transform: translateY(27px); }
+    50% { transform: translateY(-3px); }
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .categories__item {
+        width: 130px;
+        height: 130px;
+    }
+
+    .categories__item__icon span {
+        font-size: 28px;
+    }
+
+    .categories__item h5 {
+        font-size: 12px;
+    }
 }
 </style>
 
@@ -563,14 +615,14 @@
 $(document).ready(function(){
     $(".categories__slider").owlCarousel({
         loop: true,
-        margin: 20,
+        margin: 15,
         nav: false,
         autoplay: true,
         autoplayTimeout: 2500,
         responsive: {
-            0: { items: 2 },
-            600: { items: 3 },
-            1000: { items: 5 }
+            0: { items: 3 },
+            600: { items: 4 },
+            1000: { items: 6 }
         }
     });
 });
@@ -1375,7 +1427,7 @@ document.getElementById("file-upload").addEventListener("change", function(event
 
 
    <!-- Footer Section Begin -->
-<footer class="footer set-bg" data-setbg="img/cakes/new_cakes/jill-heyer-toxlLueLNDs-unsplash.jpg">
+<footer class="footer set-bg" data-setbg="img/cakes/new_cakes/michaela-baum-VnM6_liIRJ0-unsplash.jpg">
     <div class="container">
         <div class="row">
             <!-- Working Hours Section -->
@@ -1448,6 +1500,21 @@ document.getElementById("file-upload").addEventListener("change", function(event
     color: white;
     padding: 50px 0 20px;
     text-align: center;
+}
+.footer {
+    position: relative;
+    background-size: cover;
+    background-position: center;
+}
+
+.footer::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8); /* Adjust opacity (0 = fully transparent, 1 = solid) */
 }
 
 /* Footer Widget Titles */
