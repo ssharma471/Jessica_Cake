@@ -987,7 +987,7 @@ document.getElementById("file-upload").addEventListener("change", function(event
                 <div class="section-title">
                     <span>Meet the Chef</span>
                     <h2>Jessica - The Heart Behind Justlicious</h2>
-                    <p>Jessica’s passion for baking and creativity transforms simple ingredients into delightful, handcrafted cakes made with love.</p>
+                    <p>Jessica’s love for baking turns simple ingredients into unforgettable treats. Every cake is made with passion, creativity, and a personal touch.</p>
                 </div>
             </div>
         </div>
@@ -995,12 +995,10 @@ document.getElementById("file-upload").addEventListener("change", function(event
         <!-- Chef Profile -->
         <div class="row justify-content-center">
             <div class="col-lg-4 col-md-6 col-sm-8">
-                <div class="chef__item">
-                    <div class="chef__img">
-                        <img src="img/cakes/jessica.png" alt="Jessica - Justlicious">
-                    </div>
-                    <div class="chef__text">
-                        <h6>Jessica</h6>
+                <div class="chef__card">
+                    <img src="img/cakes/new_cakes/abcd.png" alt="Jessica - Justlicious" class="chef__image">
+                    <div class="chef__info">
+                        <h3>Jessica</h3>
                         <span>Founder & Master Baker</span>
                         <div class="chef__social">
                             <a href="https://www.instagram.com/_justlicious?igsh=bGswZ25sZHBxcjNi" target="_blank"><i class="fa fa-instagram"></i></a>
@@ -1019,7 +1017,7 @@ document.getElementById("file-upload").addEventListener("change", function(event
 /* General Section Styling */
 .chef {
     background: #fffaf3;
-    padding: 80px 0;
+    padding: 60px 0;
 }
 
 /* Section Title */
@@ -1029,14 +1027,13 @@ document.getElementById("file-upload").addEventListener("change", function(event
     color: #ff5722;
     text-transform: uppercase;
     display: block;
-    margin-bottom: 10px;
+    margin-bottom: 8px;
 }
 
 .section-title h2 {
-    font-size: 36px;
+    font-size: 32px;
     font-weight: bold;
     color: #333;
-    margin-bottom: 10px;
 }
 
 .section-title p {
@@ -1044,59 +1041,36 @@ document.getElementById("file-upload").addEventListener("change", function(event
     color: #666;
 }
 
-/* Chef Profile Styling */
-.chef__item {
-    position: relative;
-    overflow: hidden;
+/* Chef Card */
+.chef__card {
+    text-align: center;
+    background: white;
     border-radius: 12px;
     box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.chef__item:hover {
-    transform: scale(1.05);
-    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.15);
+    padding: 20px;
 }
 
 /* Chef Image */
-.chef__img {
-    width: 100%;
+.chef__image {
+    width: 50%;
     border-radius: 12px;
-    overflow: hidden;
 }
 
-.chef__img img {
-    width: 100%;
-    border-radius: 12px;
-    transition: transform 0.3s ease-in-out;
+/* Chef Info */
+.chef__info {
+    margin-top: 15px;
 }
 
-.chef__item:hover .chef__img img {
-    transform: scale(1.05);
-}
-
-/* Chef Text */
-.chef__text {
-    background: rgba(255, 87, 34, 0.9);
-    color: white;
-    padding: 15px 20px;
-    border-radius: 0 0 12px 12px;
-    text-align: center;
-    width: 100%;
-    transition: background 0.3s ease;
-}
-
-.chef__text h6 {
-    font-size: 20px;
+.chef__info h3 {
+    font-size: 22px;
     font-weight: bold;
+    color: #333;
     margin-bottom: 5px;
 }
 
-.chef__text span {
-    display: block;
+.chef__info span {
     font-size: 16px;
-    opacity: 0.9;
+    color: #777;
 }
 
 /* Social Icons */
@@ -1106,32 +1080,36 @@ document.getElementById("file-upload").addEventListener("change", function(event
 
 .chef__social a {
     display: inline-block;
-    margin: 0 10px;
-    color: white;
+    margin: 0 8px;
+    color: #ff5722;
     font-size: 20px;
-    transition: color 0.3s ease, transform 0.2s ease;
+    transition: color 0.3s ease;
 }
 
 .chef__social a:hover {
-    color: #ffcc80;
-    transform: scale(1.2);
+    color: #e64a19;
 }
 
-/* Responsive Styling */
+/* Mobile Responsive */
 @media (max-width: 768px) {
     .section-title h2 {
         font-size: 28px;
     }
-    .chef__text h6 {
-        font-size: 18px;
+
+    .chef__info h3 {
+        font-size: 20px;
     }
+
+    .chef__info span {
+        font-size: 14px;
+    }
+
     .chef__social a {
         font-size: 18px;
-        margin: 0 8px;
+        margin: 0 6px;
     }
 }
 </style>
-
 
 
 
