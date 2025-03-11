@@ -1,0 +1,328 @@
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        // Get the current page file name
+        let currentPage = window.location.pathname.split("/").pop();
+        if (currentPage === "" || currentPage === "index.html") currentPage = "index.html"; // Default to home page
+
+        // Select all menu items
+        let menuLinks = document.querySelectorAll(".header__menu ul li a");
+
+        // Loop through each menu link and set active class
+        menuLinks.forEach(link => {
+            if (link.getAttribute("href") === currentPage) {
+                link.classList.add("active");
+            }
+        });
+    });
+</script>
+
+<!-- Offcanvas Menu Begin -->
+<div class="offcanvas-menu-overlay"></div>
+<div class="offcanvas-menu-wrapper">
+    <div class="offcanvas__cart">
+        <div class="offcanvas__cart__links">
+            <a href="#" class="search-switch"><img src="img/cakes/WhatsApp Image 2025-03-05 at 21.01.12.jpeg" alt=""></a>
+            <a href="#"><img src="img/icon/heart.png" alt=""></a>
+        </div>
+        <div class="offcanvas__cart__item">
+            <a href="#"><img src="img/icon/cart.png" alt=""> <span>0</span></a>
+            <div class="cart__price">Cart: <span>$0.00</span></div>
+        </div>
+    </div> 
+    <div class="offcanvas__logo">
+        <a href="./index.html"><img src="img/cakes/2.jpeg" alt=""></a>
+    </div>
+    <div id="mobile-menu-wrap"></div>
+    <!-- <div class="offcanvas__option">
+        <ul>
+            <li>CAD <span class="arrow_carrot-down"></span>
+                <ul>
+                    <li>CAD</li>
+                    <li>USD</li>
+                </ul>
+            </li>
+            <li>ENG <span class="arrow_carrot-down"></span>
+                <ul>
+                    <li>ENGLISH</li>
+                </ul>
+            </li>
+            <li><a href="#">Sign in</a> <span class="arrow_carrot-down"></span></li>
+        </ul>
+    </div> -->
+</div>
+<!-- Offcanvas Menu End -->
+
+<!-- Header Section Begin -->
+<header class="header">
+<div class="header__top">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="header__top__inner">
+                    <div class="header__logo">
+                        <a href="index.html"><img src="img/cakes/logo.png" alt="Logo"></a>
+                    </div>
+                    <div class="header__top__right">
+                        <div class="header__top__right__links">
+                            <a href="#" class="search-switch"><img src="img/icon/search.png" alt=""></a>
+                            <a href="#"><img src="img/icon/heart.png" alt=""></a>
+                        </div>
+                        <div class="header__top__right__cart">
+                            <a href="#"><img src="img/icon/cart.png" alt=""> <span>0</span></a>
+                            <div class="cart__price">Cart: <span>$0.00</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="canvas__open"><i class="fa fa-bars"></i></div>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12">
+            <nav class="header__menu mobile-menu">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="shop.html">Shop Us</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+</div>
+</header>
+<!-- Header Section End -->
+<style>
+/* Style for the active menu item */
+.header__menu ul li a.active {
+color: #ff9a4e; /* Change text color */
+font-weight: bold;
+/* border-bottom: 3px solid #ff5722; Underline effect */
+background-color: #b65109;
+transition: all 0.3s ease-in-out;
+}
+
+/* Hover effect for menu items */
+.header__menu ul li a:hover {
+color: #ff9a4e;
+transition: color 0.3s ease;
+}
+
+</style>
+
+
+
+
+    <!-- FOOTER -->
+     <!-- Footer Section Begin -->
+   <footer class="footer set-bg" data-setbg="img/cakes/new_cakes/michaela-baum-VnM6_liIRJ0-unsplash.jpg">
+    <div class="container">
+        <div class="row">
+            Working Hours Section
+            <div class="col-lg-4 col-md-6 col-sm-6">
+                <div class="footer__widget">
+                    <h6>WORKING HOURS</h6>
+                    <ul>
+                        <li><strong>Open 24 Hours, 7 Days a Week!</strong></li>
+                        <li>We are always here to serve you.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- About & Social Media Section -->
+            <div class="col-lg-4 col-md-6 col-sm-6">
+                <div class="footer__about text-center">
+                    <div class="footer__logo">
+                        <a href="#"><img src="img/cakes/logo.png" alt="Justlicious"></a>
+                    </div>
+                    <p>Crafting delightful cakes and desserts with love. Quality and taste, 24/7.</p>
+                    <div class="footer__social">
+                        <a href="#"><i class="fa fa-facebook"></i></a>
+                        <a href="#"><i class="fa fa-twitter"></i></a>
+                        <a href="#"><i class="fa fa-instagram"></i></a>
+                        <a href="#"><i class="fa fa-youtube-play"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Newsletter Subscription -->
+            <div class="col-lg-4 col-md-6 col-sm-6">
+                <div class="footer__newslatter">
+                    <h6>Subscribe for Updates</h6>
+                    <p>Get the latest offers, new product updates, and exclusive discounts.</p>
+                    <form action="#">
+                        <input type="email" placeholder="Enter your email" required>
+                        <button type="submit"><i class="fa fa-paper-plane"></i></button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Copyright & Links
+    <div class="copyright">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-7 text-left">
+                    <p class="footer-company-name">&copy; 2025 Justlicious. All Rights Reserved.</p>
+                </div>
+                <div class="col-lg-5 text-right">
+                    <div class="copyright__widget">
+                        <ul>
+                            <li><a href="#">Privacy Policy</a></li>
+                            <li><a href="#">Terms & Conditions</a></li>
+                            <li><a href="#">Site Map</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> -->
+</footer>
+<!-- Footer Section End -->
+
+<style>
+/* Footer Background */
+.footer {
+    background: url('img/footer-bg.jpg') center center/cover no-repeat;
+    color: white;
+    padding: 50px 0 20px;
+    text-align: center;
+}
+.footer {
+    position: relative;
+    background-size: cover;
+    background-position: center;
+}
+
+.footer::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8); /* Adjust opacity (0 = fully transparent, 1 = solid) */
+}
+
+/* Footer Widget Titles */
+.footer h6 {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    color: #ffcc80;
+}
+
+/* Working Hours Section */
+.footer__widget ul {
+    list-style: none;
+    padding: 0;
+    font-size: 16px;
+}
+
+/* Footer Social Icons */
+.footer__social a {
+    display: inline-block;
+    margin: 0 10px;
+    font-size: 22px;
+    color: white;
+    transition: color 0.3s ease-in-out, transform 0.2s ease-in-out;
+}
+
+.footer__social a:hover {
+    color: #ffcc80;
+    transform: scale(1.1);
+}
+
+/* Newsletter Input */
+.footer__newslatter form {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.footer__newslatter input {
+    padding: 10px 15px;
+    width: 70%;
+    border: none;
+    border-radius: 30px 0 0 30px;
+    outline: none;
+}
+
+.footer__newslatter button {
+    padding: 10px 15px;
+    background: #ff5722;
+    color: white;
+    border: none;
+    border-radius: 0 30px 30px 0;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.footer__newslatter button:hover {
+    background: #e64a19;
+    transform: scale(1.1);
+}
+
+/* Copyright Section */
+.copyright {
+    background: rgba(0, 0, 0, 0.3);
+    padding: 15px 0;
+    font-size: 14px;
+    margin-top: 20px;
+}
+
+.copyright__widget ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.copyright__widget ul li {
+    margin: 0 10px;
+}
+
+.copyright__widget ul li a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.copyright__widget ul li a:hover {
+    color: #ffcc80;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .footer h6 {
+        font-size: 16px;
+    }
+    .footer__social a {
+        font-size: 18px;
+    }
+}
+/* Remove extra margin and padding */
+.map {
+    margin-bottom: 0; /* Ensure no extra space before footer */
+    padding-bottom: -10;
+
+}
+
+/* Ensure the contact section does not add space */
+.contact.spad {
+    padding-bottom: 20px; /* Reduce padding if needed */
+    margin-bottom: -100px;
+}
+
+/* Ensure footer sticks without white space */
+.footer {
+    margin-top: 0 !important;
+    padding-top: 20px;
+}
+
+</style>

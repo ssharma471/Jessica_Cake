@@ -36,6 +36,24 @@
         <div class="loader"></div>
     </div>
 
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // Get the current page file name
+            let currentPage = window.location.pathname.split("/").pop();
+            if (currentPage === "" || currentPage === "index.html") currentPage = "index.html"; // Default to home page
+    
+            // Select all menu items
+            let menuLinks = document.querySelectorAll(".header__menu ul li a");
+    
+            // Loop through each menu link and set active class
+            menuLinks.forEach(link => {
+                if (link.getAttribute("href") === currentPage) {
+                    link.classList.add("active");
+                }
+            });
+        });
+    </script>
+    
     <!-- Offcanvas Menu Begin -->
     <div class="offcanvas-menu-overlay"></div>
     <div class="offcanvas-menu-wrapper">
@@ -71,81 +89,67 @@
         </div> -->
     </div>
     <!-- Offcanvas Menu End -->
-
+    
     <!-- Header Section Begin -->
     <header class="header">
-        <div class="header__top">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <div class="header__top__inner">
-                            <!-- <div class="header__top__left">
-                                <ul>
-                                    <li>CAD <span class="arrow_carrot-down"></span>
-                                        <ul>
-                                            <li>CAD</li>
-                                            <li>USD</li>
-                                        </ul>
-                                    </li>
-                                    <li>ENG <span class="arrow_carrot-down"></span>
-                                        <ul>
-                                            <li>ENGLISH</li>
-                                        </ul>
-                                    </li>
-                                    <li><a href="#">Sign in</a> <span class="arrow_carrot-down"></span></li>
-                                </ul>
-                            </div>  -->
-                            <div class="header__logo">
-                                <a href="./index.html"><img src="img/cakes/logo.png" alt=""></a>
+    <div class="header__top">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="header__top__inner">
+                        <div class="header__logo">
+                            <a href="index.html"><img src="img/cakes/logo.png" alt="Logo"></a>
+                        </div>
+                        <div class="header__top__right">
+                            <div class="header__top__right__links">
+                                <a href="#" class="search-switch"><img src="img/icon/search.png" alt=""></a>
+                                <a href="#"><img src="img/icon/heart.png" alt=""></a>
                             </div>
-                            <div class="header__top__right">
-                                <div class="header__top__right__links">
-                                    <a href="#" class="search-switch"><img src="img/icon/search.png" alt=""></a>
-                                    <a href="#"><img src="img/icon/heart.png" alt=""></a>
-                                </div>
-                                <div class="header__top__right__cart">
-                                    <a href="#"><img src="img/icon/cart.png" alt=""> <span>0</span></a>
-                                    <div class="cart__price">Cart: <span>$0.00</span></div>
-                                </div>
+                            <div class="header__top__right__cart">
+                                <a href="#"><img src="img/icon/cart.png" alt=""> <span>0</span></a>
+                                <div class="cart__price">Cart: <span>$0.00</span></div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="canvas__open"><i class="fa fa-bars"></i></div>
+            </div>
+            <div class="canvas__open"><i class="fa fa-bars"></i></div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <nav class="header__menu mobile-menu">
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="shop.html">Shop Us</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </nav>
             </div>
         </div>
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <nav class="header__menu mobile-menu">
-                        
-                        <ul>
-                            
-                            <li class="active"><a href="./index.html">Home</a></li>
-                            <li><a href="#">About Us</a></li>
-                            <li><a href="#">Shop Us</a></li>
-                            <!-- <li><a href="#">Pages</a>
-                                <ul class="dropdown">
-                                    <li><a href="./shop-details.html">Shop Details</a></li>
-                                    <li><a href="./shoping-cart.html">Shoping Cart</a></li>
-                                    <li><a href="./checkout.html">Check Out</a></li>
-                                    <li><a href="./wisslist.html">Wishlist</a></li>
-                                    <li><a href="./Class.html">Class</a></li>
-                                    <li><a href="./blog-details.html">Blog Details</a></li>
-                                </ul>
-                            </li> -->
-                            <li><a href="#">Blog</a></li>
-                            <li><a href="./contact.html">Contact Us</a></li>
-                            <!-- <a href="#" class="search-switch"><img src="img/icon/search.png" alt=""></a>
-                            <a href="#"><img src="img/icon/heart.png" alt=""></a>
-                            <a href="#"><img src="img/icon/cart.png" alt=""> <span>Cart: $0.00</span></a> -->
-                        </ul>
-                    </nav>
-                </div>
-            </div>
-        </div>
+    </div>
     </header>
     <!-- Header Section End -->
+    <style>
+    /* Style for the active menu item */
+    .header__menu ul li a.active {
+    color: #ffffff; /* Change text color */
+    font-weight: bold;
+    /* border-bottom: 3px solid #ff5722; Underline effect */
+    background-color: #b65109;
+    transition: all 0.3s ease-in-out;
+    }
+    
+    /* Hover effect for menu items */
+    .header__menu ul li a:hover {
+    color: #ff9a4e;
+    transition: color 0.3s ease;
+    }
+    
+    </style>
 
    <!-- Hero Section Begin -->
 <section class="hero">
@@ -777,12 +781,178 @@ $(document).ready(function(){
 </section>
 <!-- Product Section End -->
 
+<!-- Cake Customization Section Begin -->
+<!-- Cake Customization Section Begin -->
+<section class="cake-custom spad">
+    <div class="container">
+        <div class="row">
+            <!-- Cake Preview -->
+            <div class="col-lg-6 text-center">
+                <h3>Customize Your Cake</h3>
+                <div class="cake-preview">
+                    <img id="cakeDesign" src="img/cakes/cake_images/cake_0_0.png" alt="Custom Cake">
+                </div>
+            </div>
+
+            <!-- <div class="custom-order__form"> -->
+                
+            <!-- Cake Customization Options -->
+            <div class="col-lg-6">
+                <div class="custom-options">
+                    <span style="color: red;">Custom Cakes</span>
+                    <h2 >Bespoke Cakes for Your Special Moments</h2>
+                    <p>Order a handcrafted cake tailored to your taste and preferences.</p>                    <form>
+                        <!-- Design Selection -->
+                        <label>Design</label>
+                        <div class="design-options">
+                            <img src="img/cakes/cake_images/cake_0_0.png" onclick="selectDesign(this.src)" alt="Design 1">
+                            <img src="img/cakes/cake_images/cake_0_1.png" onclick="selectDesign(this.src)" alt="Design 2">
+                            <img src="img/cakes/cake_images/cake_0_2.png" onclick="selectDesign(this.src)" alt="Design 3">
+                            <img src="img/cakes/cake_images/cake_0_3.png" onclick="selectDesign(this.src)" alt="Design 4">
+                            <img src="img/cakes/cake_images/cake_0_4.png" onclick="selectDesign(this.src)" alt="Design 5">
+                            <img src="img/cakes/cake_images/cake_1_0.png" onclick="selectDesign(this.src)" alt="Design 5">
+                            <img src="img/cakes/cake_images/cake_1_1.png" onclick="selectDesign(this.src)" alt="Design 5">
+                            <img src="img/cakes/cake_images/cake_1_2.png" onclick="selectDesign(this.src)" alt="Design 5">
+                            <img src="img/cakes/cake_images/cake_1_3.png" onclick="selectDesign(this.src)" alt="Design 5">
+                            <img src="img/cakes/cake_images/cake_1_4.png" onclick="selectDesign(this.src)" alt="Design 5">
+                            <img src="img/cakes/cake_images/cake_2_0.png" onclick="selectDesign(this.src)" alt="Design 5">
+                            <img src="img/cakes/cake_images/cake_2_1.png" onclick="selectDesign(this.src)" alt="Design 5">
+                            <img src="img/cakes/cake_images/cake_2_2.png" onclick="selectDesign(this.src)" alt="Design 5">
+                            <img src="img/cakes/cake_images/cake_2_3.png" onclick="selectDesign(this.src)" alt="Design 5">
+                            <img src="img/cakes/cake_images/cake_2_4.png" onclick="selectDesign(this.src)" alt="Design 5">
+                            <img src="img/cakes/cake_images/cake_3_0.png" onclick="selectDesign(this.src)" alt="Design 5">
+                            <img src="img/cakes/cake_images/cake_3_1.png" onclick="selectDesign(this.src)" alt="Design 5">
+                            <img src="img/cakes/cake_images/cake_3_2.png" onclick="selectDesign(this.src)" alt="Design 5">
+                            <img src="img/cakes/cake_images/cake_3_3.png" onclick="selectDesign(this.src)" alt="Design 5">
+                            <img src="img/cakes/cake_images/cake_3_4.png" onclick="selectDesign(this.src)" alt="Design 5">
+                            <img src="img/cakes/cake_images/cake_4_0.png" onclick="selectDesign(this.src)" alt="Design 5">
+                            <img src="img/cakes/cake_images/cake_4_1.png" onclick="selectDesign(this.src)" alt="Design 5">
+                            <img src="img/cakes/cake_images/cake_4_2.png" onclick="selectDesign(this.src)" alt="Design 5">
+                            <img src="img/cakes/cake_images/cake_4_3.png" onclick="selectDesign(this.src)" alt="Design 5">
+                            <img src="img/cakes/cake_images/cake_4_4.png" onclick="selectDesign(this.src)" alt="Design 5">
+                        </div>
+                        <br>
+                        <div class="form-group">
+                            <select>
+                                <option value="" disabled selected>Select Cake Type</option>
+                                <option value="birthday">Birthday Cake</option>
+                                <option value="wedding">Wedding Cake</option>
+                                <option value="anniversary">Anniversary Cake</option>
+                                <option value="custom">Custom Design</option>
+                            </select>
+                        </div>
+                        <!-- Personal Message -->
+                         <br>
+                        <label for="cakeMessage">Add a Message</label>
+                        <input type="text" id="cakeMessage" placeholder="Happy Birthday!">
+
+                        <div class="form-group">
+                            <label for="file-upload" class="custom-file-upload">
+                                <i class="fa fa-upload"></i> Upload Your Cake Design
+                            </label>
+                            <input id="file-upload" type="file" accept="image/*">
+                            <div id="image-preview"></div>
+                        </div>
+                        <!-- Order Button -->
+                        <button type="submit" class="order-btn">Place Order</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Cake Customization Section End -->
+
+<style>
+/* General Section Styling */
+.cake-custom {
+    background: #fffaf3;
+    padding: 60px 0;
+}
+
+/* Cake Preview */
+.cake-preview {
+    width: 300px;
+    height: 200px;
+    margin: 100px auto;
+}
+
+.cake-preview img {
+    width: 100%;
+    max-width: 250px;
+    /* height: 100%; */
+    transition: opacity 0.3s ease-in-out;
+}
+
+/* Customization Options */
+.custom-options {
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+label {
+    font-size: 16px;
+    font-weight: bold;
+    display: block;
+    margin-top: 10px;
+}
+
+/* Design Selection */
+.design-options {
+    display: flex;
+    gap: 10px;
+    overflow-x: auto;
+    white-space: nowrap;
+    padding-bottom: 10px;
+}
+
+.design-options img {
+    width: 60px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.design-options img:hover {
+    transform: scale(1.1);
+}
+
+/* Order Button */
+.order-btn {
+    margin-top: 15px;
+    width: 100%;
+    background: #62b801;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.order-btn:hover {
+    background: #1d5b00;
+}
+</style>
+
+<script>
+function selectDesign(imageSrc) {
+    document.getElementById("cakeDesign").src = imageSrc;
+}
+</script>
+
+
+
 
 <!-- Custom Cake Order Section Begin -->
-<section class="custom-order spad">
+<!-- <section class="custom-order spad">
     <div class="container">
         <div class="row align-items-center">
-            <!-- Left Side: Order Form -->
+            Left Side: Order Form 
             <div class="col-lg-6">
                 <div class="custom-order__form">
                     <div class="section-title">
@@ -809,7 +979,7 @@ $(document).ready(function(){
                         <div class="form-group">
                             <input type="text" placeholder="Your Specific Requests (Flavors, Design, etc.)">
                         </div>
-                        <!-- File Upload Button with Preview -->
+                        File Upload Button with Preview
                         <div class="form-group">
                             <label for="file-upload" class="custom-file-upload">
                                 <i class="fa fa-upload"></i> Upload Cake Design
@@ -822,7 +992,7 @@ $(document).ready(function(){
                 </div>
             </div>
 
-            <!-- Right Side: Instagram Section -->
+            <!-- Right Side: Instagram Section 
             <div class="col-lg-6">
                 <div class="custom-order__insta">
                     <div class="insta-bg"></div>
@@ -833,7 +1003,7 @@ $(document).ready(function(){
             </div>
         </div>
     </div>
-</section>
+</section> -->
 <!-- Custom Cake Order Section End -->
 
 <style>
@@ -1009,7 +1179,7 @@ input:focus, select:focus {
 </style>
 
 <!-- JavaScript for Image Upload Preview -->
-<script>
+<!-- <script>
 document.getElementById("file-upload").addEventListener("change", function(event) {
     var file = event.target.files[0];
     if (file) {
@@ -1026,7 +1196,7 @@ document.getElementById("file-upload").addEventListener("change", function(event
         reader.readAsDataURL(file);
     }
 });
-</script>
+</script> -->
 
 
 
@@ -1068,7 +1238,7 @@ document.getElementById("file-upload").addEventListener("change", function(event
 <style>
 /* General Section Styling */
 .chef {
-    background: #fffaf3;
+    background: #ffffff;
     padding: 60px 0;
 }
 
@@ -1427,195 +1597,240 @@ document.getElementById("file-upload").addEventListener("change", function(event
 
 
    <!-- Footer Section Begin -->
-<footer class="footer set-bg" data-setbg="img/cakes/new_cakes/michaela-baum-VnM6_liIRJ0-unsplash.jpg">
+
+   <footer class="footer set-bg" data-setbg="img/cakes/new_cakes/michaela-baum-VnM6_liIRJ0-unsplash.jpg">
     <div class="container">
-        <div class="row">
-            <!-- Working Hours Section -->
-            <div class="col-lg-4 col-md-6 col-sm-6">
-                <div class="footer__widget">
-                    <h6>WORKING HOURS</h6>
-                    <ul>
-                        <li><strong>Open 24 Hours, 7 Days a Week!</strong></li>
-                        <li>We are always here to serve you.</li>
-                    </ul>
+        <div class="footer-wrapper">
+            <!-- Brand Info -->
+            <div class="footer-brand">
+                <img src="img/cakes/logo.png" alt="Justlicious Logo">
+                <p>Crafting delightful cakes and desserts with love. Quality and taste, 24/7.</p>
+                <div class="footer-buttons">
+                    <span class="app-btn black"></i> The best-rated</a>
+                    <span class="app-btn white"></i> cake in the area</a>
                 </div>
             </div>
 
-            <!-- About & Social Media Section -->
-            <div class="col-lg-4 col-md-6 col-sm-6">
-                <div class="footer__about text-center">
-                    <div class="footer__logo">
-                        <a href="#"><img src="img/cakes/logo.png" alt="Justlicious"></a>
-                    </div>
-                    <p>Crafting delightful cakes and desserts with love. Quality and taste, 24/7.</p>
-                    <div class="footer__social">
-                        <a href="#"><i class="fa fa-facebook"></i></a>
-                        <a href="#"><i class="fa fa-twitter"></i></a>
-                        <a href="#"><i class="fa fa-instagram"></i></a>
-                        <a href="#"><i class="fa fa-youtube-play"></i></a>
-                    </div>
-                </div>
+            <!-- Navigation Links -->
+            <div class="footer-links">
+                <h4>Pages</h4>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Our Menu</a></li>
+                    <li><a href="#">Shop</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
             </div>
 
-            <!-- Newsletter Subscription -->
-            <div class="col-lg-4 col-md-6 col-sm-6">
-                <div class="footer__newslatter">
-                    <h6>Subscribe for Updates</h6>
-                    <p>Get the latest offers, new product updates, and exclusive discounts.</p>
-                    <form action="#">
-                        <input type="email" placeholder="Enter your email" required>
-                        <button type="submit"><i class="fa fa-paper-plane"></i></button>
-                    </form>
+            <div class="footer-links">
+                <h4>Services</h4>
+                <ul>
+                    <li><a href="#">Custom Cakes</a></li>
+                    <li><a href="#">Bakery Classes</a></li>
+                    <li><a href="#">Gift Boxes</a></li>
+                    <li><a href="#">Special Orders</a></li>
+                    <li><a href="#">Catering</a></li>
+                </ul>
+            </div>
+
+            <!-- Contact Section -->
+            <div class="footer-contact">
+                <h4>Address</h4>
+                <div class="contact-card">
+                    <p>Ready To Get Started?</p>
+                    <p><i class="fa fa-envelope"></i> contact@justlicious.com</p>
+                    <p><i class="fa fa-phone"></i> +1 604 849 2596</p>
+                    <p><i class="fa fa-map-marker"></i> 43 Watchman Rd, Brampton, ON L6P 2L6</p>
                 </div>
+            </div>
+        </div>
+
+        <!-- Social Links -->
+        <div class="footer-bottom">
+            <p>© 2025 Justlicious. All Rights Reserved.</p>
+            <div class="footer-social">
+                <a href="#"><i class="fa fa-facebook"></i></a>
+                <a href="#"><i class="fa fa-twitter"></i></a>
+                <a href="#"><i class="fa fa-instagram"></i></a>
+                <a href="#"><i class="fa fa-pinterest"></i></a>
             </div>
         </div>
     </div>
-
-    <!-- Copyright & Links
-    <div class="copyright">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-7 text-left">
-                    <p class="footer-company-name">&copy; 2025 Justlicious. All Rights Reserved.</p>
-                </div>
-                <div class="col-lg-5 text-right">
-                    <div class="copyright__widget">
-                        <ul>
-                            <li><a href="#">Privacy Policy</a></li>
-                            <li><a href="#">Terms & Conditions</a></li>
-                            <li><a href="#">Site Map</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div> -->
 </footer>
-<!-- Footer Section End -->
-
 <style>
-/* Footer Background */
+/* Footer Styles */
 .footer {
-    background: url('img/footer-bg.jpg') center center/cover no-repeat;
-    color: white;
-    padding: 50px 0 20px;
+position: relative;
+background: url('img/cakes/new_cakes/michaela-baum-VnM6_liIRJ0-unsplash.jpg') center/cover no-repeat;
+padding: 60px 0 20px;
+font-family: 'Poppins', sans-serif;
+color: white;
+overflow: hidden;
+}
+
+/* Blurred Overlay */
+.footer::after {
+content: "";
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+backdrop-filter: blur(6px); /* Apply blur */
+background: rgba(0, 0, 0, 0.6); /* Dark transparent overlay */
+z-index: 1;
+}
+
+/* Ensures footer content stays above the blur */
+.footer .container {
+position: relative;
+z-index: 2;
+}
+
+/* Footer Layout */
+.footer-wrapper {
+display: flex;
+justify-content: space-between;
+flex-wrap: wrap;
+gap: 40px;
+}
+
+/* Brand Info */
+.footer-brand img {
+width: 140px;
+margin-bottom: 10px;
+}
+
+.footer-brand p {
+font-size: 14px;
+color: #ffffff;
+max-width: 250px;
+}
+
+.footer-buttons {
+display: flex;
+gap: 10px;
+margin-top: 10px;
+}
+
+.app-btn {
+display: flex;
+align-items: center;
+gap: 8px;
+font-size: 14px;
+padding: 10px 16px;
+border-radius: 8px;
+text-decoration: none;
+font-weight: bold;
+transition: 0.3s;
+}
+
+.app-btn.black {
+background: #000;
+color: #fff;
+}
+
+.app-btn.white {
+background: #fff;
+color: #333;
+border: 1px solid #ddd;
+}
+
+/* Footer Links */
+.footer-links h4 {
+font-size: 18px;
+font-weight: 600;
+color: #ffffff;
+margin-bottom: 10px;
+}
+
+.footer-links ul {
+list-style: none;
+padding: 0;
+}
+
+.footer-links ul li {
+margin: 5px 0;
+}
+
+.footer-links ul li a {
+text-decoration: none;
+color: #a2a09f;
+transition: 0.3s;
+}
+
+.footer-links ul li a:hover {
+color: #ab3c00;
+}
+
+/* Contact Card */
+.footer-contact h4 {
+font-size: 18px;
+font-weight: 600;
+color: #ffffff;
+margin-bottom: 10px;
+}
+
+.contact-card {
+background: rgba(255, 255, 255, 0.1); /* Slightly transparent for better visibility */
+padding: 15px;
+border-radius: 8px;
+backdrop-filter: blur(5px); /* Adds slight blur */
+box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.contact-card p {
+font-size: 14px;
+color: #ffffff;
+margin: 5px 0;
+}
+
+.contact-card i {
+color: #ab3c00;
+margin-right: 8px;
+}
+
+/* Footer Bottom */
+.footer-bottom {
+display: flex;
+justify-content: space-between;
+align-items: center;
+margin-top: 40px;
+padding-top: 20px;
+border-top: 1px solid #ddd;
+}
+
+.footer-bottom p {
+font-size: 14px;
+color: #ffffff;
+}
+
+.footer-social a {
+font-size: 18px;
+color: #fbfbfb;
+margin: 0 8px;
+transition: 0.3s;
+}
+
+.footer-social a:hover {
+color: #ab3c00;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+.footer-wrapper {
+    flex-direction: column;
+    gap: 30px;
+}
+.footer-bottom {
+    flex-direction: column;
     text-align: center;
+    gap: 10px;
 }
-.footer {
-    position: relative;
-    background-size: cover;
-    background-position: center;
 }
 
-.footer::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.8); /* Adjust opacity (0 = fully transparent, 1 = solid) */
-}
-
-/* Footer Widget Titles */
-.footer h6 {
-    font-size: 18px;
-    font-weight: bold;
-    margin-bottom: 15px;
-    text-transform: uppercase;
-    color: #ffcc80;
-}
-
-/* Working Hours Section */
-.footer__widget ul {
-    list-style: none;
-    padding: 0;
-    font-size: 16px;
-}
-
-/* Footer Social Icons */
-.footer__social a {
-    display: inline-block;
-    margin: 0 10px;
-    font-size: 22px;
-    color: white;
-    transition: color 0.3s ease-in-out, transform 0.2s ease-in-out;
-}
-
-.footer__social a:hover {
-    color: #ffcc80;
-    transform: scale(1.1);
-}
-
-/* Newsletter Input */
-.footer__newslatter form {
-    display: flex;
-    justify-content: center;
-    margin-top: 10px;
-}
-
-.footer__newslatter input {
-    padding: 10px 15px;
-    width: 70%;
-    border: none;
-    border-radius: 30px 0 0 30px;
-    outline: none;
-}
-
-.footer__newslatter button {
-    padding: 10px 15px;
-    background: #ff5722;
-    color: white;
-    border: none;
-    border-radius: 0 30px 30px 0;
-    cursor: pointer;
-    transition: background 0.3s ease, transform 0.2s ease;
-}
-
-.footer__newslatter button:hover {
-    background: #e64a19;
-    transform: scale(1.1);
-}
-
-/* Copyright Section */
-.copyright {
-    background: rgba(0, 0, 0, 0.3);
-    padding: 15px 0;
-    font-size: 14px;
-    margin-top: 20px;
-}
-
-.copyright__widget ul {
-    list-style: none;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-}
-
-.copyright__widget ul li {
-    margin: 0 10px;
-}
-
-.copyright__widget ul li a {
-    color: white;
-    text-decoration: none;
-    transition: color 0.3s ease;
-}
-
-.copyright__widget ul li a:hover {
-    color: #ffcc80;
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    .footer h6 {
-        font-size: 16px;
-    }
-    .footer__social a {
-        font-size: 18px;
-    }
-}
-</style>
+</style>    
 
 
 <!-- Search Begin -->
